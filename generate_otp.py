@@ -17,7 +17,7 @@ def generate_secret_code(username: str, expiry_time: int) -> dict:
         username: str: The username of the user
         expiry_time: int: The expiry time of the OTP
     return:
-        dict: A dictionary containing the message and success key
+        dict: A dictionary containing the message and success key.
     '''
     code: int = generate_otp_number()
     REDIS.set(username, code, ex=expiry_time)
