@@ -49,9 +49,10 @@ def msg_listener():
 
 
 if __name__ == "__main__":
-    try:
-        Thread(target=msg_listener).start()
-        log.info("A separate thread has been started to listen to the messages.")
-        log.info("You can start sending messages.")
-    except KeyboardInterrupt:
-        log.info("Exiting the chat application.")
+
+    '''Run this script if you would like to see the messages transactions on the CLI.'''
+
+    sep_thread = Thread(target=msg_listener)
+    sep_thread.start()
+    log.info("A separate thread has been started to listen to the messages.")
+    log.info("You can start sending messages.")
